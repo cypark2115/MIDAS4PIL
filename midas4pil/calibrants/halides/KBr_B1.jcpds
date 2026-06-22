@@ -1,0 +1,23 @@
+VERSION:   4
+COMMENT: KCl-B1(Walker et al., AmMin2005_89_204)
+K0:       14.2
+K0P:      5.5
+DK0DT:    0.0
+DK0PDT:   0.0
+SYMMETRY: CUBIC
+A:        6.6
+B:        6.6
+C:        6.6
+ALPHA:    90.0
+BETA:     90.0
+GAMMA:    90.0
+VOLUME:   287.496
+ALPHAT:   0.0
+DALPHADT: 0.0
+DIHKL:    3.3	100	2	0	0
+DIHKL:    2.33345	64	2	2	0
+DIHKL:    1.90526	20	2	2	2
+DIHKL:    1.65	8	4	0	0
+DIHKL:    1.4758	20	4	2	0
+DIHKL:    1.34722	14	4	2	2
+DIHKL:    1.16673	4	4	4	0

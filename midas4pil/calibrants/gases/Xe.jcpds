@@ -1,0 +1,16 @@
+VERSION: 4
+COMMENT: hcp Xenon (CS Y PRL 2001)
+K0:       04.300
+K0P:       4.90000
+SYMMETRY: HEXAGONAL
+A:       4.467
+C:       7.295
+VOLUME:        126.0631
+ALPHAT:      00.00E0
+DIHKL:  3.8680   22.  1  0  0
+DIHKL:  3.6470   26.  0  0  2
+DIHKL:  3.4170  100.  1  0  1
+DIHKL:  2.6540   17.  1  0  2
+DIHKL:  2.2330   22.  1  1  0
+DIHKL:  2.0580   26.  1  0  3
+DIHKL:  1.9050   28.  1  1  2

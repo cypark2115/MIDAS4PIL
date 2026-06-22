@@ -1,0 +1,14 @@
+VERSION: 4
+COMMENT: KCl-B1(Walker et al., AmMin2005_89_204)
+K0:       17.5
+K0P:       5
+SYMMETRY: CUBIC
+A:      6.2879
+ALPHAT:      0.000000
+DIHKL: 3.1439      100.     2   0   0
+DIHKL: 2.2231       64.     2   2   0
+DIHKL: 1.8152       20.     2   2   2
+DIHKL: 1.5720        8.     4   0   0
+DIHKL: 1.4060       20.     4   2   0
+DIHKL: 1.2835       14.     4   2   2
+DIHKL: 1.1116        4.     4   4   0

@@ -1,0 +1,142 @@
+# midas4pil — initial geometry for calibration
+#
+# Edit this file before running:  python run_calibration.py
+#
+# The script reads this file, runs calibration, and produces:
+#   <BASE>_geometry.toml       — calibrated geometry (per-experiment)
+#   <BASE>_geometry.poni       — .poni format export (for cross-checking)
+#   <BASE>_panel_shifts.txt    — per-panel corrections (per-detector, reuse)
+#   <BASE>_lineout.xy          — 1-D powder pattern
+#   <BASE>_cake.tif            — caked image
+#   <BASE>_comparison.png      — global vs panel-corrected comparison
+#
+# where <BASE> is the calibrant image filename without extension.
+
+
+# ── Input files ──────────────────────────────────────────────────────────
+[input]
+
+# Calibrant diffraction image (TIFF).
+# All output filenames are derived from this filename.
+image = "CeO2_350mm_29p2keV.tif"
+
+# Bad-pixel mask (TIFF, optional).
+# Convention: 1 = bad, 0 = good.
+# Set to "" (empty string) to auto-generate a mask from the image.
+# Mask orientation is auto-detected; no manual flipping required.
+mask = "CeO2_350mm_29p2keV_mask.tif"
+
+# Calibrant file (.jcpds or .cif).
+# Bundled calibrants are in midas4pil/_JCPDS/ and midas4pil/_CIF/.
+# Examples:
+#   "CeO2.jcpds"   — cerium oxide (NIST SRM 674b)
+#   "LaB6.jcpds"   — lanthanum hexaboride (NIST SRM 660)
+#   "Si.jcpds"     — silicon
+calibrant = "CeO2.jcpds"
+
+
+# ── Detector parameters (known from detector model) ─────────────────────
+[detector]
+
+nrows  = 1679           # detector rows (pixels)
+ncols  = 1475           # detector columns (pixels)
+px_um  = 172            # pixel size (um).  Pilatus: 172, Eiger: 75
+
+# Panel layout (tiled detectors only; omit for single-panel detectors).
+# make_panel_id_map() uses these to build the panel-ID map.
+# Gaps may differ between adjacent panels; use a list for variable gaps:
+#   gap_y = [7, 7]   # per-gap values
+#
+# Pilatus 2M CdTe (3 col × 8 row panels, 487×195 px, 7/17 px gaps):
+# n_panels_y  = 3
+# n_panels_z  = 8
+# panel_size_y = 487
+# panel_size_z = 195
+# gap_y       = 7
+# gap_z       = 17
+#
+# Pilatus 300K (3 col × 1 row panels, 487×195 px, 7 px col-gaps):
+# n_panels_y  = 3
+# n_panels_z  = 1
+# panel_size_y = 487
+# panel_size_z = 195
+# gap_y       = 7
+# gap_z       = 0
+
+
+# ── Experiment parameters (known from beamline setup) ────────────────────
+[beam]
+
+wavelength_A = 0.42460  # X-ray wavelength (angstrom) = 12398.4193 / E(eV)
+                        # Example: 29.2 keV -> 0.42460 A
+                        #          20.0 keV -> 0.61992 A
+
+
+# ── Geometry (approximate starting values) ──────────────────────────────
+# These are refined by calibration.  Only lsd and bc need to be
+# approximately correct; tilts and distortion can start at zero.
+[geometry]
+
+lsd_um    = 350000.0    # sample-to-detector distance (um, approximate)
+                        # Does not need to be precise — the two-stage
+                        # calibration handles errors up to ~5%.
+
+bc_y_px   = 737.5       # beam centre column from left (pixels, approximate)
+bc_z_px   = 839.5       # beam centre row from top (pixels, approximate)
+                        # If unknown, set both to the detector centre:
+                        #   bc_y = ncols / 2,  bc_z = nrows / 2
+                        # The script will auto-detect the beam centre
+                        # from the diffraction pattern.
+
+tx_deg    = 0.0         # detector tilt about X axis (degrees)
+ty_deg    = 0.0         # detector tilt about Y axis (degrees)
+tz_deg    = 0.0         # detector tilt about Z axis (degrees)
+                        # Set all tilts to 0 if unknown — calibration
+                        # will refine them.
+
+p0        = 0           # radial distortion coefficients
+p1        = 0           # (set all to 0 if unknown)
+p2        = 0
+p3_deg    = 0.0         # distortion phase (degrees)
+p4        = 0
+rho_d_um  = 217578      # distortion reference radius (um)
+
+
+# ── Integration limits ──────────────────────────────────────────────────
+# These define the 2theta and eta range for data reduction output.
+[integration]
+
+mode         = "varbin" # "varbin" (default) or "unibin"
+                        #
+                        # varbin (recommended): bin widths are set by the
+                        #   detector's angular resolution at each 2theta.
+                        #   Each bin spans exactly one pixel's angular
+                        #   footprint.  No artificial oversampling.
+                        #   tth_bin_deg and eta_bin_deg are ignored.
+                        #
+                        # unibin: user-specified uniform bin widths.
+                        #   Use only when uniform spacing is strictly
+                        #   required (e.g. FFT for pair distribution
+                        #   function).  Set tth_bin_deg no smaller than
+                        #   the detector's pixel resolution to avoid
+                        #   creating information the detector cannot
+                        #   physically deliver.
+
+tth_min_deg  = 2.0      # 2theta lower limit (degrees)
+tth_max_deg  = 29.0     # 2theta upper limit (degrees)
+                        # Set tth_max to cover all visible calibrant rings.
+
+tth_bin_deg  = 0.025    # 2theta bin width (degrees, unibin mode only)
+eta_min_deg  = -180     # eta lower limit (degrees, -180 for full ring)
+eta_max_deg  = 180      # eta upper limit (degrees, +180 for full ring)
+eta_bin_deg  = 1.0      # eta bin width (degrees, unibin mode only)
+
+
+# ── Calibration control ────────────────────────────────────────────────
+# Advanced settings for the two-stage calibration.
+# These defaults work well for most cases.
+[calibration]
+
+tth_rough_max_deg = 15.0   # Stage 1: use only rings below this 2theta.
+                           # Must be below the first pair of closely-spaced
+                           # rings in your calibrant.

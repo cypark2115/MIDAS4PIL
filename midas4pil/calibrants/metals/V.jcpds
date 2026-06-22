@@ -1,0 +1,10 @@
+VERSION: 4
+COMMENT: Vanadium (Wyckoff 1963)
+K0:       100.000
+K0P:       4.0000
+SYMMETRY: CUBIC
+A:      3.0240
+ALPHAT:      0.000000
+DIHKL:   2.1383    100.    1.00    1.00    0.00
+DIHKL:   1.5120     14.    2.00    0.00    0.00
+DIHKL:   1.2345     23.    2.00    1.00    1.00

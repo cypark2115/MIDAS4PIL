@@ -1,0 +1,29 @@
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# OS artifacts
+Thumbs.db
+.DS_Store
+.loglogin
+
+# Claude Code project settings
+.claude/
+
+# Internal / beamline-specific
+CLAUDE.md
+GUI_SCENARIOS.md
+scenario_audit_v111.py
+16bmd_example/
+dev/
+data_example/
+logs/
+_legacy_CIF/
+_legacy_JCPDS/

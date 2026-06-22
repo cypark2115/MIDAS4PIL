@@ -1,0 +1,31 @@
+VERSION: 4
+COMMENT: CeO2 NIST SRM 674b, Fm-3m, a=5.411 A (JCPDS 43-1002).
+COMMENT: Lines 1-8 (d > 1.21 A): measured relative intensities from JCPDS 43-1002.
+COMMENT: Lines 9-20 (d <= 1.21 A): intensities computed from structure factors
+COMMENT:   (Cromer-Mann f, Debye-Waller B_Ce=0.3/B_O=0.5 A^2, Lp unpolarized,
+COMMENT:    normalized to I(111)=100; overlapping families summed).
+K0:        0.
+K0P:       0.
+SYMMETRY: CUBIC
+A:      5.411
+ALPHAT:      0.
+DIHKL:   3.1240    100.    1.00    1.00    1.00
+DIHKL:   2.7060     27.    2.00    0.00    0.00
+DIHKL:   1.9132     46.    2.00    2.00    0.00
+DIHKL:   1.6316     34.    3.00    1.00    1.00
+DIHKL:   1.5621      6.    2.00    2.00    2.00
+DIHKL:   1.3528      6.    4.00    0.00    0.00
+DIHKL:   1.2414     12.    3.00    3.00    1.00
+DIHKL:   1.2100      7.    4.00    2.00    0.00
+DIHKL:   1.1045     21.    4.00    2.00    2.00
+DIHKL:   1.0413     18.    5.00    1.00    1.00
+DIHKL:   0.9565      6.    4.00    4.00    0.00
+DIHKL:   0.9146     16.    5.00    3.00    1.00
+DIHKL:   0.9018      7.    4.00    4.00    2.00
+DIHKL:   0.8556      8.    6.00    2.00    0.00
+DIHKL:   0.8252      5.    3.00    3.00    5.00
+DIHKL:   0.8157      4.    6.00    2.00    2.00
+DIHKL:   0.7810      2.    4.00    4.00    4.00
+DIHKL:   0.7577      7.    5.00    5.00    1.00
+DIHKL:   0.7504      3.    6.00    4.00    0.00
+DIHKL:   0.7231      7.    6.00    4.00    2.00

@@ -1,0 +1,15 @@
+VERSION: 4
+COMMENT: SiC 3c JCPDS 2-1383
+K0:       260.0 
+K0P:       2.90 
+SYMMETRY: CUBIC
+A:       4.3584 
+ALPHAT:      0.000000
+DIHKL:    2.516   100     1   1   1
+DIHKL:    2.179    32     2   0   0
+DIHKL:    1.541    76     2   2   0
+DIHKL:    1.314    36     3   1   1
+DIHKL:    1.258    16     2   2   2
+DIHKL:    1.090    34     4   0   0
+DIHKL:    0.999    17     3   3   1
+DIHKL:    0.975     8     4   2   0

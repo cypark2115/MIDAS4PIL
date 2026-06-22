@@ -1,0 +1,24 @@
+VERSION:   4
+COMMENT: KCl  B2 (EOS from Campbell and Heinz, 1991)
+K0:       14.9
+K0P:      5.81
+DK0DT:    0.0
+DK0PDT:   0.0
+SYMMETRY: CUBIC
+A:        3.98
+B:        3.98
+C:        3.98
+ALPHA:    90.0
+BETA:     90.0
+GAMMA:    90.0
+VOLUME:   63.044792
+ALPHAT:   4.26e-05
+DALPHADT: 0.0
+DIHKL:    3.98	6	1	0	0
+DIHKL:    2.81428	100	1	1	0
+DIHKL:    2.29785	1	1	1	1
+DIHKL:    1.99	8	2	0	0
+DIHKL:    1.77991	1	2	1	0
+DIHKL:    1.62483	21	2	1	1
+DIHKL:    1.40714	4	2	2	0
+DIHKL:    1.32667	1	3	0	0
