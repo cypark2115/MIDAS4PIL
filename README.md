@@ -1025,5 +1025,6 @@ SNIP algorithm reference: Morhac et al., NIM A 401 (1997) 113-132.
 
 ## License
 
-BSD 3-Clause License. Copyright (c) 2026 Changyong Park, HPCAT, X-ray Science Division,
-Argonne National Laboratory. See LICENSE for the full text.
+BSD 3-Clause License. Copyright (c) 2026 UChicago Argonne, LLC. All Rights Reserved.
+Author: Changyong Park, HPCAT, X-ray Science Division, Argonne National Laboratory.
+ANL open-source release approved (SF-26-094). See LICENSE for the full text.
