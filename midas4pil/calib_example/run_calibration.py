@@ -1,3 +1,6 @@
+# Copyright (c) 2026, UChicago Argonne, LLC. All Rights Reserved.
+# Author: Changyong Park, HPCAT, X-ray Science Division, Argonne National Laboratory.
+# BSD Open Source License -- see LICENSE in the project root for the full license text.
 """
 End-to-end calibration and reduction example for midas4pil.
 Covers every public API in midas4pil.__all__.
